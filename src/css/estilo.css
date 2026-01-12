@@ -1,0 +1,132 @@
+/* RESET UNIVERSAL */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-fundo: #000;
+    --cor-fundo2: #c7c7c7;
+    --cor-display: #285f21;
+    --cor-btns: #427036;
+    --fundo-btn: #181818;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+#calc-fundo {
+    background: var(--cor-fundo);
+    margin: auto;
+    width: 20vw;
+    height: fit-content;
+    padding: .5em;
+    border-radius: 10px;
+}
+
+#display-fundo {
+    background: var(--cor-fundo2);
+    color: var(--cor-display);
+    text-align: right;
+    padding: 0.5em;
+    height: fit-content;
+    font-family: "Orbitron";
+    font-size: 1.3rem;
+    border-radius: 10px;
+    overflow-x: scroll;
+}
+
+#btn-0 {
+    grid-area: n0;
+}
+
+#btn-1 {
+    grid-area: n1;
+}
+
+#btn-2 {
+    grid-area: n2;
+}
+
+#btn-3 {
+    grid-area: n3;
+}
+
+#btn-4 {
+    grid-area: n4;
+}
+
+#btn-5 {
+    grid-area: n5;
+}
+
+#btn-6 {
+    grid-area: n6;
+}
+
+#btn-7 {
+    grid-area: n7;
+}
+
+#btn-8 {
+    grid-area: n8;
+}
+
+#btn-9 {
+    grid-area: n9;
+}
+
+#btn-- {
+    grid-area: sub;
+}
+
+#btn-mais {
+    grid-area: soma;
+}
+
+#btn-div {
+    grid-area: div;
+}
+#btn-X {grid-area: X;}
+#btn-dec{grid-area:ponto;}
+#btn-neg{grid-area:neg;}
+#btn-apaga{grid-area:apaga;}
+#btn-igual{grid-area:igual;}
+
+
+#botoes-fundo {
+    background: #111111;
+    margin-top: 1em;
+    /* justify-content: center; */
+    height: fit-content;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#botoes-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-areas:
+        "apaga nada nada X"
+        "n7 n8 n9 div"
+        "n4 n5 n6 sub"
+        "n1 n2 n3 soma"
+        "neg n0 ponto igual";
+    justify-items: center;
+}
+
+.btn-calc {
+    height: 4em;
+    width: 4em;
+    border: none;
+    background: var(--fundo-btn);
+    color: var(--cor-btns);
+    border-radius: 50%;
+    font-weight: 800;
+    font-size:100%;
+}
