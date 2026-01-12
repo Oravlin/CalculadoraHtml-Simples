@@ -13,6 +13,8 @@
     --cor-display: #285f21;
     --cor-btns: #427036;
     --fundo-btn: #181818;
+    --fundo-btn-hover:#121212;
+    --cor-btns-hover:#2c4d24;
 }
 
 main {
@@ -121,6 +123,7 @@ main {
 }
 
 .btn-calc {
+    position:relative;
     height: 4em;
     width: 4em;
     border: none;
@@ -129,4 +132,13 @@ main {
     border-radius: 50%;
     font-weight: 800;
     font-size:100%;
+    cursor:pointer;
+}
+
+.btn-calc:hover{
+    transform:scale(110%);
+    background: var(--fundo-btn-hover);
+    color: var(--cor-btns-hover);
+    border:#555555 1px solid;
+    z-index:99;
 }
