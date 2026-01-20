@@ -1,51 +1,20 @@
-const container = document.querySelector('#botoes-container');
+let usernamesList = ["AlvaroDoGrau", "Nao_eh_o_admin", "Cidade_Goat"];
+let passwordList = ["gg_wp_ez_pz", "confia_fio", "top1_professor"];
+let username;
+let password;
 
-let displayText = "0";
-let resultDisplay = "0";
-let calc = [0, 0];
-let numero;
+document.getElementById("btn-login").addEventListener("click", Login);
 
-container.addEventListener('click', (event) => {
-    if (event.target.classList.contains('btn-calc')) {
-        const idClick = event.target.id;
-        if (idClick.length == 5)
-            numero = addTxtDisplay(idClick)
-        document.getElementById("display-text").textContent = numero.toString();
-
-        if (idClick === "btn-apaga") {
-            document.getElementById("display-text").textContent = "0";
-            displayText = "0";
-            resultDisplay = "0";
-            calc = [0, 0]
+function Login() {
+    username = document.getElementById("username").value;
+    password = document.getElementById("password").value;
+    const passIndex = usernamesList.indexOf(username);
+    if (passIndex in usernamesList && passIndex in passwordList) {
+        if (password === passwordList[passIndex]) {
+            console.log("login realizado com sucesso! :)")
+            location.href = "./src/pages/calc.html"
         }
-        if (idClick === "btn-mais") {
-            if (calc[0] === 0) {
-                calc[0] = numero;
-                console.log(calc);
-                document.getElementById("display-text").textContent = "0";
-                displayText = "0";
-                resultDisplay = "0";
-            }
-            else{
-                calc[1] = numero;
-                calc[0] = calc[0] + calc[1];
-                calc[1] = 0;
-                console.log(calc);
-                document.getElementById("display-text").textContent = calc[0].toString();
-                displayText = "0";
-                resultDisplay = "0";
-            }
-        }
-    }
-})
-
-function addTxtDisplay(num) {
-    const n = Array.from(num);
-    if (displayText == "0") {
-        displayText = n[4];
     }
     else
-        displayText = + n[4];
-    resultDisplay = resultDisplay + displayText;
-    return parseFloat(resultDisplay);
+        console.log("algo deu de errado prç :(")
 }
