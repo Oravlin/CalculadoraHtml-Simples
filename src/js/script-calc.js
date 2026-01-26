@@ -1,5 +1,4 @@
 const container = document.querySelector('#botoes-container');
-
 let displayText = "0";
 let resultDisplay = "0";
 let calc = [0, "", 0];
@@ -42,7 +41,7 @@ container.addEventListener('click', (event) => {
                 result = calc[0] - calc[2];
                 calc[0] = result;
                 calc[2] = 0;
-                document.getElementById("display-text").textContent = result.toString();
+                document.getElementById("display-text").textContent = result.toString();.00000000000
                 displayText = 0;
                 resultDisplay = 0;
             }
