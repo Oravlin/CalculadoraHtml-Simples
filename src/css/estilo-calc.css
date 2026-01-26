@@ -99,6 +99,7 @@ main {
 #btn-neg{grid-area:neg;}
 #btn-apaga{grid-area:apaga;}
 #btn-igual{grid-area:igual;}
+#btn-back{grid-area:backspace;}
 
 
 #botoes-fundo {
@@ -114,7 +115,7 @@ main {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-template-areas:
-        "apaga nada nada X"
+        "apaga nada backspace X"
         "n7 n8 n9 div"
         "n4 n5 n6 sub"
         "n1 n2 n3 soma"
@@ -141,4 +142,14 @@ main {
     color: var(--cor-btns-hover);
     border:#555555 1px solid;
     z-index:99;
+}
+
+.backspace-image{
+    background-image: url(../assets/backspace.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    width:3vw;
+    height:6vh;
+    margin:auto;
 }

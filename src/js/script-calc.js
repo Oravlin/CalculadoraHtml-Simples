@@ -11,6 +11,7 @@ container.addEventListener('click', (event) => {
     if (event.target.classList.contains('btn-calc')) {
         const idClick = event.target.id;
         display = parseFloat(document.getElementById("display-text").textContent);
+        console.log(display);
         if (idClick.length == 5) {
             numero = addTxtDisplay(idClick);
             console.log(numero);
@@ -21,7 +22,7 @@ container.addEventListener('click', (event) => {
             document.getElementById("display-text").textContent = "0";
             displayText = "0";
             resultDisplay = "0";
-            calc = [0, 0]
+            calc = [0, "", 0]
         }
 
         if (idClick === "btn-igual" && calc[1] != "") {
@@ -94,17 +95,42 @@ container.addEventListener('click', (event) => {
             displayText = 0;
             resultDisplay = 0;
         }
+        if (idClick === "btn-dec") {
+            document.getElementById("display-text").textContent = addTxtDisplay(idClick).toString();
+        }
+        if (idClick === "btn-back") {
+            console.log("tentando apagar 1 caracter");
+            if (document.getElementById("display-text").textContent.length > 1) {
+                let n = document.getElementById("display-text").textContent.slice(0,-1);
+                console.log(n);
+                resultDisplay = n;
+                numero = parseFloat(n);
+                calc = [parseFloat(n), "", 0]
+                document.getElementById("display-text").textContent = n;
+            }
+            else{
+                displayText = 0;
+                resultDisplay = 0;
+                numero = 0;
+                calc[0,"",0];
+                document.getElementById("display-text").textContent = '0';
+            }
+        }
     }
 })
 
 function addTxtDisplay(num) {
-    const n = Array.from(num);
-    if (displayText == "0") {
-        displayText = n[4];
+    if (num == "btn-dec")
+        resultDisplay = display + ".";
+    else {
+        const n = Array.from(num);
+        if (displayText == "0") {
+            displayText = n[4];
+        }
+        else
+            displayText = + n[4];
+        resultDisplay = resultDisplay + displayText;
     }
-    else
-        displayText = + n[4];
-    resultDisplay = resultDisplay + displayText;
     return parseFloat(resultDisplay);
 }
 
@@ -115,6 +141,7 @@ function operacaoManeira(pao) {
         document.getElementById("display-text").textContent = "0";
         displayText = "0";
         resultDisplay = "0";
+        numero = 0;
     }
     else {
         calc[2] = numero;
