@@ -8,27 +8,43 @@
 }
 
 :root {
-    --cor-fundo: #000;
+    --cor-fundo: oklch(95% 0 0);
     --cor-fundo2: #c7c7c7;
     --cor-display: #285f21;
-    --cor-btns: #427036;
-    --fundo-btn: #181818;
-    --fundo-btn-hover:#121212;
-    --cor-btns-hover:#2c4d24;
+    --cor-btns: oklch(10% 0 0);
+    --fundo-btn: oklch(80% 0 0);
+    --fundo-btn-hover: oklch(70% 0 0);
+    --cor-btns-hover: oklch(45% 0 0);
+    --fundo-btn-container: oklch(90% 0 0);
+    --borda-calc: oklch(80% 0 0) 2px solid;
+}
+
+header {
+    background: var(--cor-fundo);
+    color:oklch(20% 0 0);
+    padding:0.25em;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1.5em;
+    border-bottom: var(--borda-calc);
+    border-radius: 0 0 0.5em 0.5em;
 }
 
 main {
     width: 100%;
-    height: 100%;
+    height: fit-content;
+    display:grid;
 }
 
 #calc-fundo {
     background: var(--cor-fundo);
     margin: auto;
-    width: 20vw;
+    width: fit-content;
     height: fit-content;
     padding: .5em;
     border-radius: 10px;
+    border: var(--borda-calc);
+    box-shadow: 0 5px 5px oklch(70% 0 0);
+    margin-top:2em;
 }
 
 #display-fundo {
@@ -40,7 +56,7 @@ main {
     font-family: "Orbitron";
     font-size: 1.3rem;
     border-radius: 10px;
-    overflow-x:auto;
+    overflow-x: auto;
 }
 
 #btn-0 {
@@ -83,7 +99,7 @@ main {
     grid-area: n9;
 }
 
-#btn-menos{
+#btn-menos {
     grid-area: sub;
 }
 
@@ -94,16 +110,34 @@ main {
 #btn-div {
     grid-area: div;
 }
-#btn-mult {grid-area: X;}
-#btn-dec{grid-area:ponto;}
-#btn-neg{grid-area:neg;}
-#btn-apaga{grid-area:apaga;}
-#btn-igual{grid-area:igual;}
-#btn-back{grid-area:backspace;}
+
+#btn-mult {
+    grid-area: X;
+}
+
+#btn-dec {
+    grid-area: ponto;
+}
+
+#btn-neg {
+    grid-area: neg;
+}
+
+#btn-apaga {
+    grid-area: apaga;
+}
+
+#btn-igual {
+    grid-area: igual;
+}
+
+#btn-back {
+    grid-area: backspace;
+}
 
 
 #botoes-fundo {
-    background: #111111;
+    background: var(--fundo-btn-container);
     margin-top: 1em;
     /* justify-content: center; */
     height: fit-content;
@@ -121,10 +155,12 @@ main {
         "n1 n2 n3 soma"
         "neg n0 ponto igual";
     justify-items: center;
+    padding: 0.25em;
+    gap: 0.25em;
 }
 
 .btn-calc {
-    position:relative;
+    position: relative;
     height: 4em;
     width: 4em;
     border: none;
@@ -132,24 +168,37 @@ main {
     color: var(--cor-btns);
     border-radius: 50%;
     font-weight: 800;
-    font-size:100%;
-    cursor:pointer;
+    font-size: 100%;
+    cursor: pointer;
 }
 
-.btn-calc:hover{
-    transform:scale(110%);
+.btn-calc:hover {
+    transform: scale(110%);
     background: var(--fundo-btn-hover);
     color: var(--cor-btns-hover);
-    border:#555555 1px solid;
-    z-index:99;
+    border: #555555 1px solid;
+    z-index: 99;
 }
 
-.backspace-image{
+.backspace-image {
     background-image: url(../assets/backspace.png);
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position:center;
-    width:3vw;
-    height:6vh;
-    margin:auto;
+    background-position: center;
+    width: 3vw;
+    height: 6vh;
+    margin: auto;
+}
+
+#btn-voltar{
+    background:oklch(95% 0 0);
+    border: var(--borda-calc);
+    width:4em;
+    height:2em;
+    font-size:1.5em;
+    border-radius:.25em;
+    justify-self: center;
+    cursor:pointer;
+    margin-top:2em;
+    text-align: center;
 }

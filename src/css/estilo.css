@@ -10,13 +10,11 @@ html{
 }
 
 header{
-    background: oklch(0% 0 0);
-    color: oklch(75% 0 0);
+    background: oklch(95% 0 0);
+    color: oklch(20% 0 0);
     padding: 1rem;
-}
-
-body{
-    background: oklch(88% 0 0);
+    border-bottom: 2px solid oklch(85% 0 0); 
+    box-shadow: 0 0 10px oklch(80% 0 0);
 }
 
 main{
@@ -53,16 +51,17 @@ input{
     margin-bottom:0.75rem;
     transform:translateX(-50%);
     padding:5px;
+    font-size:1em;
 }
 
 button[type="button"]{
     border: oklch(80% 0 0) 1px solid;
-    border-radius:0.2rem;
-    height:5vh;
-    width:10vw;
-    font-size:1.3rem;
+    border-radius:0.2em;
+    height:1.5em;
+    width:5em;
+    font-size:1.4em;
     margin-top:2rem;
-    background:oklch(100% 0 0);
+    background:oklch(90% 0 0);
     box-shadow:0 5px 5px oklch(80% 0 0);
     cursor:pointer;
     justify-self: center;
@@ -71,6 +70,6 @@ button[type="button"]{
 button[type="button"]:hover{
     transition:0.2s ease-in-out;
     transform: scale(110%);
-    background: oklch(90% 0 0);
-    border: oklch(85% 0 0) 2px solid
+    background: oklch(80% 0 0);
+    border: oklch(75% 0 0) 2px solid
 }
