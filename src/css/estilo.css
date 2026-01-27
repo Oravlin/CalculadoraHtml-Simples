@@ -24,7 +24,14 @@ main{
 }
 
 #container{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "username-container"
+    "password-container"
+    "button";
     justify-content: center;
+    align-items:center;
     background:oklch(95% 0 0);
     width:40vw;
     height:auto;
@@ -54,9 +61,16 @@ button[type="button"]{
     height:5vh;
     width:10vw;
     font-size:1.3rem;
-    margin-left: 50%;
-    transform:translateX(-50%);
     margin-top:2rem;
     background:oklch(100% 0 0);
     box-shadow:0 5px 5px oklch(80% 0 0);
+    cursor:pointer;
+    justify-self: center;
+}
+
+button[type="button"]:hover{
+    transition:0.2s ease-in-out;
+    transform: scale(110%);
+    background: oklch(90% 0 0);
+    border: oklch(85% 0 0) 2px solid
 }
