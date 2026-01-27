@@ -1,4 +1,5 @@
 const container = document.querySelector('#botoes-container');
+const video = document.getElementById("video")
 let displayText = "0";
 let resultDisplay = "0";
 let calc = [0, "", 0];
@@ -41,7 +42,7 @@ container.addEventListener('click', (event) => {
                 result = calc[0] - calc[2];
                 calc[0] = result;
                 calc[2] = 0;
-                document.getElementById("display-text").textContent = result.toString();.00000000000
+                document.getElementById("display-text").textContent = result.toString();
                 displayText = 0;
                 resultDisplay = 0;
             }
@@ -57,13 +58,21 @@ container.addEventListener('click', (event) => {
             }
 
             if (calc[1] === "/") {
-                console.log(calc);
-                result = calc[0] / calc[2];
-                calc[0] = result;
-                calc[2] = 0;
-                document.getElementById("display-text").textContent = result.toString();
-                displayText = 0;
-                resultDisplay = 0;
+                if (calc[2] === 0) {
+                    video.classList.remove("hide")
+                    video.play()
+                    if (video.ended() == True)
+                        window.location = "./src/pages/KABOOM.html"
+                }
+                else {
+                    console.log(calc);
+                    result = calc[0] / calc[2];
+                    calc[0] = result;
+                    calc[2] = 0;
+                    document.getElementById("display-text").textContent = result.toString();
+                    displayText = 0;
+                    resultDisplay = 0;
+                }
             }
 
         }
@@ -100,18 +109,18 @@ container.addEventListener('click', (event) => {
         if (idClick === "btn-back") {
             console.log("tentando apagar 1 caracter");
             if (document.getElementById("display-text").textContent.length > 1) {
-                let n = document.getElementById("display-text").textContent.slice(0,-1);
+                let n = document.getElementById("display-text").textContent.slice(0, -1);
                 console.log(n);
                 resultDisplay = n;
                 numero = parseFloat(n);
                 calc = [parseFloat(n), "", 0]
                 document.getElementById("display-text").textContent = n;
             }
-            else{
+            else {
                 displayText = 0;
                 resultDisplay = 0;
                 numero = 0;
-                calc[0,"",0];
+                calc[0, "", 0];
                 document.getElementById("display-text").textContent = '0';
             }
         }
