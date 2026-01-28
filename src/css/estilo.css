@@ -91,7 +91,7 @@ button[type="button"]:hover{
     border-radius:2em;
     width:60vw;
     height:50vh;
-    transform:translateY(50%);
+    transform:translateY(25%);
     padding:.3em;
     font-size:1.3em;
 }
@@ -102,4 +102,11 @@ span{
 
 h4{
     font-size:0.6em;
+}
+
+img {
+    width:20vw;
+    height:40vh;
+    margin-left:50%;
+    transform: translateX(-50%);
 }
