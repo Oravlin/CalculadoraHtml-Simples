@@ -61,8 +61,6 @@ container.addEventListener('click', (event) => {
                 if (calc[2] === 0) {
                     video.classList.remove("hide")
                     video.play()
-                    if (video.ended() == True)
-                        window.location = "./src/pages/KABOOM.html"
                 }
                 else {
                     console.log(calc);
